@@ -55,8 +55,8 @@ jobs:
       - name: Build Docker image
         uses: docker/build-push-action@f2a1d5e99d037542a71f64918e516c093c6f3fc4
         with:
-          # context: .
-          file: ./app/Dockerfile
+          context: "{{defaultContext}}:app"
+          # file: ./app/Dockerfile
           push: false
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
@@ -74,7 +74,8 @@ jobs:
       - name: Push Docker image to github
         uses: docker/build-push-action@f2a1d5e99d037542a71f64918e516c093c6f3fc4
         with:
-          file: ./app/Dockerfile
+          context: "{{defaultContext}}:app"
+          # file: ./app/Dockerfile
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
@@ -89,7 +90,7 @@ jobs:
       - name: Login to Amazon ECR
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@62f4f872db3836360b72999f4b87f1ff13310f3a
-        
+
       - name: Build, tag, and push image to Amazon ECR
         id: build-image
         env:
