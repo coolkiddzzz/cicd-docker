@@ -1,0 +1,43 @@
+<mxfile host="app.diagrams.net" modified="2024-04-05T07:46:49.340Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.3.1 Safari/605.1.15" etag="soNdLFcahK1y1vHroAMZ" version="24.2.2" type="device">
+  <diagram name="Page-1" id="3YcEa3tvPqxrjxebqivF">
+    <mxGraphModel dx="1811" dy="1836" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="QZWRSxegJ77OKDIElTd6-12" value="Attached to" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="QZWRSxegJ77OKDIElTd6-2" target="1UbhTUfAiy5I1uspnRUk-1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="QZWRSxegJ77OKDIElTd6-2" value="Application Load Balancer" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#ffffff;fillColor=#232F3E;dashed=0;verticalLabelPosition=middle;verticalAlign=bottom;align=center;html=1;whiteSpace=wrap;fontSize=10;fontStyle=1;spacing=3;shape=mxgraph.aws4.productIcon;prIcon=mxgraph.aws4.application_load_balancer;" parent="1" vertex="1">
+          <mxGeometry x="290" y="100" width="80" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="QZWRSxegJ77OKDIElTd6-4" value="Amazon ECR" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#ffffff;fillColor=#232F3E;dashed=0;verticalLabelPosition=middle;verticalAlign=bottom;align=center;html=1;whiteSpace=wrap;fontSize=10;fontStyle=1;spacing=3;shape=mxgraph.aws4.productIcon;prIcon=mxgraph.aws4.ecr;" parent="1" vertex="1">
+          <mxGeometry x="140" y="260" width="80" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="QZWRSxegJ77OKDIElTd6-11" value="Publish to" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="QZWRSxegJ77OKDIElTd6-5" target="QZWRSxegJ77OKDIElTd6-4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="QZWRSxegJ77OKDIElTd6-5" value="Write code as Docker image" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn1.iconfinder.com/data/icons/social-media-2106/24/social_media_social_media_logo_docker-128.png" parent="1" vertex="1">
+          <mxGeometry x="-60" y="270" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="QZWRSxegJ77OKDIElTd6-8" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://d1.awsstatic.com/legal/AmazonElasticContainerRegistry/Product-Page-Diagram_Amazon-ECR.2f9e7f26ef78f4dc6f058f7eeb07cf696f6951c1.png;" parent="1" vertex="1">
+          <mxGeometry x="-100" y="460" width="780" height="243.92" as="geometry" />
+        </mxCell>
+        <mxCell id="QZWRSxegJ77OKDIElTd6-10" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;elbow=vertical;startArrow=none;endFill=1;strokeColor=#545B64;rounded=0;" parent="1" source="QZWRSxegJ77OKDIElTd6-4" target="1UbhTUfAiy5I1uspnRUk-1" edge="1">
+          <mxGeometry width="100" relative="1" as="geometry">
+            <mxPoint x="230" y="310" as="sourcePoint" />
+            <mxPoint x="430" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QZWRSxegJ77OKDIElTd6-14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="QZWRSxegJ77OKDIElTd6-13" target="QZWRSxegJ77OKDIElTd6-2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="QZWRSxegJ77OKDIElTd6-13" value="Users" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.users;" parent="1" vertex="1">
+          <mxGeometry x="292" y="-30" width="78" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="1UbhTUfAiy5I1uspnRUk-1" value="AWS Fargate" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#ffffff;fillColor=#232F3E;dashed=0;verticalLabelPosition=middle;verticalAlign=bottom;align=center;html=1;whiteSpace=wrap;fontSize=10;fontStyle=1;spacing=3;shape=mxgraph.aws4.productIcon;prIcon=mxgraph.aws4.fargate;" vertex="1" parent="1">
+          <mxGeometry x="290" y="260" width="80" height="100" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
