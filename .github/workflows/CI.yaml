@@ -9,6 +9,8 @@ name: Create and publish a Docker image
 on:
   push:
     branches: ['master']
+    paths:
+      - app/**
 
 # Defines two custom environment variables for the workflow. These are used for the Container registry domain, and a name for the Docker image that this workflow builds.
 env:
@@ -55,8 +57,7 @@ jobs:
       - name: Build Docker image
         uses: docker/build-push-action@f2a1d5e99d037542a71f64918e516c093c6f3fc4
         with:
-          file: ./app/Dockerfile
-          # context: .
+          context: .
           push: false
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
