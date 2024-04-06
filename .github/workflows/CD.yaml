@@ -42,8 +42,8 @@ jobs: # what task u want it to run
      run: terraform apply -auto-approve
 
 ## wait to verify ec2 destroyed
-   - name: Pause 30min to verify bucket creation
-     run: sleep 18000
+   - name: Pause 3min to verify bucket creation
+     run: sleep 1800
 
 ## terraform destroy 
    - name: Terraform destroy
