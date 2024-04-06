@@ -1,13 +1,13 @@
 # Creating ECR 
 
-resource "aws_ecr_repository" "foo" {
-  name                 = "mwaiyee"
-  image_tag_mutability = "MUTABLE"
-  force_delete = true
-  image_scanning_configuration {
-    scan_on_push = false
-  }
-}
+# resource "aws_ecr_repository" "foo" {
+#   name                 = "mwaiyee"
+#   image_tag_mutability = "MUTABLE"
+#   force_delete = true
+#   image_scanning_configuration {
+#     scan_on_push = false
+#   }
+# }
 
 
 # Creating ecs cluster 
@@ -17,7 +17,7 @@ resource "aws_ecs_cluster" "cluster" {
 
 # Creating service for cluster
 resource "aws_ecs_service" "service" {
-  name          = "hello-world"
+  name          = "hello-world-test"
   cluster       = aws_ecs_cluster.cluster.arn
   desired_count = 2
   launch_type   = "FARGATE"
@@ -39,7 +39,7 @@ resource "aws_ecs_service" "service" {
 
 # Creating task definition
 resource "aws_ecs_task_definition" "service" {
-  family                   = "mwaiyee-service"
+  family                   = "mwaiyee-service-tf"
   execution_role_arn       = "arn:aws:iam::255945442255:role/ecsTaskExecutionRole"
   requires_compatibilities = ["FARGATE"]
   network_mode             = "awsvpc"

@@ -1,1 +1,50 @@
 # To deploy ECS from ECR and deploying application load balancer etc using terraform
+
+name: Terraform CD
+
+# whenever push any code into github repo, this yaml file will run 
+# OR user manually indicate workflow dispatch
+on:
+  workflow_dispatch:
+
+# declare the running agent (what VM to run?)
+jobs: # what task u want it to run 
+ terraform-cd: # can be called anything 
+   runs-on: ubuntu-latest # docker image 
+
+   steps:
+  ##setup
+   - name: Checkout repository
+     uses: actions/checkout@v2 # uses - library in terraform
+
+  #aws configure
+   - name: Configure AWS credentials
+     uses: aws-actions/configure-aws-credentials@v1
+     with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-east-1 # or hardcode us-east-1
+
+## install terraform (like installing binary)
+   - name: Set up Terraform
+     uses: hashicorp/setup-terraform@v1
+      
+#terraform init
+   - name: Initialize Terraform
+     run: terraform init # run - command line that we run on our own
+
+#terraform plan
+   - name: Terraform plan
+     run: terraform plan 
+
+#terraform apply
+   - name: Terraform Apply
+     run: terraform apply -auto-approve
+
+## wait to verify ec2 destroyed
+   - name: Pause 30min to verify bucket creation
+     run: sleep 18000
+
+## terraform destroy 
+   - name: Terraform destroy
+     run: terraform destroy -auto-approve
