@@ -1,17 +1,14 @@
-# CICD with Docker and AWS 
-This project aims to publish a docker image to AWS ECR. A simple webapp will be created with the help of AWS ECS, Fargate and Load Balancer. 
+# Github Actions CI/CD Pipline for AWS ECS
 
-## Built with 
+## Overview 
+- CI: This project aims to publish a docker image to AWS ECR and Github projects with vulnerability scanning tools (eg snyk).
+- CD: A simple webapp with application load balancer is created on AWS ECR, which is managed by AWS Fargate. These resources are created using terraform (an IaC tool).
+  - Note: the resources will be torn down after 3min.
+
+## Architecture
+<img src="image/AWS ECS and ECR with Load Balancer-3.drawio-2.png">
+
+## Technologies Used 
+- Github Actions
+- AWS
 - Terraform 
-- AWS 
-- Github Actions 
-
-# Getting Started
-- Publish docker image to AWS ECR 
-- Create a new AWS ECS cluster
-- Create a task definition with the published docker image in ECR to be provisioned in AWS ECS cluster
-- Use AWS Fargate to run containers without having to manage servers or clusters of Amazon EC2 instances
-- Use AWS Load balancer to access our containers
-- Github actions
-  - CI: to build docker image to AWS ECR
-

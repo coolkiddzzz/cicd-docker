@@ -1,6 +1,6 @@
 # To deploy ECS from ECR and deploying application load balancer etc using terraform
 
-name: Terraform CD
+name: CD Workflow
 
 # whenever push any code into github repo, this yaml file will run 
 # OR user manually indicate workflow dispatch
