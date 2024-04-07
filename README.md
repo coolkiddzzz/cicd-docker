@@ -11,6 +11,7 @@
 The diagram illustrates the following workflow: 
 
 CI: Pushing docker image to Github Package and AWS ECR. 
+
 1. Admin adds/edits dockerfile into github repo with terraform templates.
 2. This triggers github actions for CI. It uses vulnerability scanning tool (ie synk) to check for vulnerabilities. 
 3. The workflow builds the Dockerfile and pushes image into Amazon ECR and Github Packages.
@@ -20,6 +21,7 @@ CI: Pushing docker image to Github Package and AWS ECR.
 Admins are able to run CD flow manually in Github Actions. 
 
 CD: Creating AWS ECS using Fargate and allow public access using AWS Application Load Balancer. 
+
 5. AWS ECS is created using terraform and it pulls the latest docker image found in ECR. It uses Fargate to manage the ECS instances. 
 6. AWS Fargate is attached to an application load balancer, 
 7. Users are able to access the application via the load balancer DNS name.
