@@ -6,7 +6,7 @@
   - Note: the resources will be torn down after 3min.
 
 ## Architecture
-<img src="image/architecture.png" width="1000" height="400">
+<img src="image/architecture.png">
 
 The diagram illustrates the following workflow: 
 
