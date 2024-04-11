@@ -48,8 +48,6 @@ jobs:
         run: pwd
       - name: Change directory
         run: cd app
-      - name: print current directory 2
-        run: pwd
       - name: Run Snyk to check for vulnerabilities
         uses: snyk/actions/python-3.8@master
         env:
