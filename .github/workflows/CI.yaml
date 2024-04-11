@@ -51,11 +51,12 @@ jobs:
       - name: print current directory 2
         run: pwd
       - uses: snyk/actions/python-3.8@master
+      - name: Auth snyk
+        run: snyk auth ${{ secrets.SNYK_TOKEN }}
       - name: Run Snyk to check for vulnerabilities
         run: | 
           cd app 
           cd ls
-          snyk auth ${{ secrets.SNYK_TOKEN }}
           snyk test
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
