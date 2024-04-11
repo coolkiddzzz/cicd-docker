@@ -47,18 +47,11 @@ jobs:
       - name: print current directory 1
         run: pwd
       - name: Change directory
-        run: cd ./app
+        run: cd app
       - name: print current directory 2
         run: pwd
-      - name: Auth snyk
-        run: snyk auth ${{ secrets.SNYK_TOKEN }}
-      - uses: snyk/actions/python-3.8@master
-      
       - name: Run Snyk to check for vulnerabilities
-        run: | 
-          cd app 
-          cd ls
-          snyk test
+        uses: snyk/actions/python-3.8@master
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
       
