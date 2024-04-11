@@ -4,11 +4,11 @@ RUN pip install --upgrade pip
 
 WORKDIR /app
 
-COPY Requirements.txt .
+COPY requirements.txt .
 # Install any needed packages specified in requirements.txt
-RUN pip install --no-cache-dir -r Requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
-COPY . .
+COPY app.py .
 
 # Make port 5000 available to the world outside this container
 EXPOSE 5000
