@@ -55,7 +55,7 @@ jobs:
         run: | 
           cd app 
           cd ls
-          snyk auth
+          snyk auth ${{ secrets.SNYK_TOKEN }}
           snyk test
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
