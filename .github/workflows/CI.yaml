@@ -23,9 +23,9 @@ jobs:
     permissions:
       contents: read
       packages: write
-    defaults: 
-      run:
-        working-directory: ./app
+    # defaults: 
+    #   run:
+    #     working-directory: ./app
       # 
     steps:
       - name: Checkout repository
