@@ -47,6 +47,9 @@ jobs:
       - name: Check current directory
         run: | 
           pwd 
+      - name: List current directory
+        run: | 
+          ls
       - name: Run Snyk to check for vulnerabilities
         uses: snyk/actions/python-3.8@master
         continue-on-error: true # To make sure that SARIF upload gets called
