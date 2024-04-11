@@ -54,7 +54,8 @@ jobs:
       - name: Run Snyk to check for vulnerabilities
         run: | 
           cd app 
-          synk auth
+          cd ls
+          snyk auth
           snyk test
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
